@@ -213,7 +213,6 @@
 		C10201542526D3E8003B6FB7 /* NightscoutService+ServiceStatusViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NightscoutService+ServiceStatusViewModelDelegate.swift"; sourceTree = "<group>"; };
 		C121D8D629C7866D00DA0520 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C121D8D729C7866D00DA0520 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/Localizable.strings; sourceTree = "<group>"; };
-		C130B6F727DD4CD000173048 /* NightscoutUploadKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NightscoutUploadKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1398D1F27C41E3D00416AD6 /* ProfileSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSet.swift; sourceTree = "<group>"; };
 		C1398D2127C434FB00416AD6 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		C15A582E29C7866600D3A5A1 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -388,7 +387,6 @@
 			isa = PBXGroup;
 			children = (
 				C1B9ACFF27DE9AD800857532 /* Crypto.framework */,
-				C130B6F727DD4CD000173048 /* NightscoutUploadKit.framework */,
 				C1C1349727DD35260097B5AD /* LoopKitUI.framework */,
 				C1C1349527DD35060097B5AD /* LoopKit.framework */,
 			);
