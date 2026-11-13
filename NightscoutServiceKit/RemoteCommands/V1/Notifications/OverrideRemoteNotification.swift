@@ -17,6 +17,8 @@ public struct OverrideRemoteNotification: RemoteNotification, Codable {
     public let expiration: Date?
     public let sentAt: Date?
     public let enteredBy: String?
+    public let otp: String?
+    public let encryptedReturnNotification: String?
     
     enum CodingKeys: String, CodingKey {
         case name = "override-name"
@@ -25,6 +27,8 @@ public struct OverrideRemoteNotification: RemoteNotification, Codable {
         case expiration = "expiration"
         case sentAt = "sent-at"
         case enteredBy = "entered-by"
+        case otp = "otp"
+        case encryptedReturnNotification = "encrypted_return_notification"
     }
     
     public func durationTime() -> TimeInterval? {
@@ -39,9 +43,8 @@ public struct OverrideRemoteNotification: RemoteNotification, Codable {
         return .temporaryScheduleOverride(action)
     }
     
-    func validate(otpManager: OTPManager) throws {
-        let expirationValidator = ExpirationValidator(expiration: expiration)
-        try expirationValidator.validate()
+    func otpValidationRequired() -> Bool {
+        return false
     }
     
     public static func includedInNotification(_ notification: [String: Any]) -> Bool {

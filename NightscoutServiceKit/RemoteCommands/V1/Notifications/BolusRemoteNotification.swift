@@ -17,6 +17,7 @@ public struct BolusRemoteNotification: RemoteNotification, Codable {
     public let sentAt: Date?
     public let otp: String?
     public let enteredBy: String?
+    public let encryptedReturnNotification: String?
     
     enum CodingKeys: String, CodingKey {
         case remoteAddress = "remote-address"
@@ -25,17 +26,15 @@ public struct BolusRemoteNotification: RemoteNotification, Codable {
         case sentAt = "sent-at"
         case otp = "otp"
         case enteredBy = "entered-by"
+        case encryptedReturnNotification = "encrypted_return_notification"
     }
     
     func toRemoteAction() -> Action {
         return .bolusEntry(BolusAction(amountInUnits: amount))
     }
     
-    func validate(otpManager: OTPManager) throws {
-        let expirationValidator = ExpirationValidator(expiration: expiration)
-        let otpValidator = OTPValidator(sentAt: sentAt, otp: otp, otpManager: otpManager)
-        try expirationValidator.validate()
-        try otpValidator.validate()
+    func otpValidationRequired() -> Bool {
+        return true
     }
     
     public static func includedInNotification(_ notification: [String: Any]) -> Bool {
